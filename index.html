@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+        // П Р О Т О Т И П Ы
+
+/*
+    Array.prototype.myFilter = function(callback) {     // создали новый метод в Array
+
+        var filtred_array = [];
+
+        for(var i = 0 ;i < this.length; i++) {
+            if(callback(this[i], i , this)) {
+                filtred_array.push(this[i]);
+            }
+        }
+
+        return filtred_array;
+    };
+    */
+/*
+
+    var arr = [1,2,3,4,5,6];
+
+    var filtred = arr.myFilter(function(elem,index,array){
+        return elem > 3;
+    });
+
+
+    console.log(filtred);
+
+*/
+/*
+
+Array.prototype.myMap = function(callback) {     // создали новый метод(map) в Array
+
+    var filtred_array = [];
+
+    for(var i = 0 ;i < this.length; i++) {
+        if(callback(this[i],i,this)) {
+            filtred_array.push(callback(this[i]));
+        }
+    }
+
+    return filtred_array;
+};
+
+var arr = ["asd","asd","asd","asd","as","asd"];
+
+    var some = arr.myMap(function(elem,index,array){
+        return elem.charAt(0).toUpperCase() + elem.slice(1);
+
+})
+    console.log(some);
+*/
+
+
+    // Ф У Н К Ц И И
+/*
+    1)  function name() {}
+    2) var name = function(){}
+    3) (function(){})();
+    4) ! + -
+*/
+/*
+
+some_fun();
+
+function some_fun() {
+    console.log("asd");
+};
+
+var some_fun2 = function(){
+  console.log("anon");
+};
+
+;(function() {
+     console.log("self");
+})( // явно передавать для области видимости );
+
+    some_fun2();
+*/
+/*
+
+console.log(this);
+
+function test() {
+    this.aaa = 123;
+    return this;
+}
+
+console.log(test().aaa);
+*/
+/*
+
+var obj = {
+    num: 5
+};
+
+function test(a,b) {
+    return a+b+this.num;
+}
+console.log(test(3,7));
+console.log(test.call(obj,3,7)); //1й аргумент должен быть обьектом / он будет this
+console.log(test(3,7));
+console.log(test(3,7));
+*/
+/*
+// ВЫЗОВЫ
+    1) call(obg,3,7);    //мало элементов call
+    2) apply(obj,[3,7]); //много элементов apply
+*/
+/*
+        var obj = {
+            num: 5
+        };
+
+function test(a,b) {
+return a+b+this.num;
+}
+
+var arr = [1,3,4,5,7];
+   var bound = test.bind(obj); //связывает
+
+    console.log(bound(3,7));
+*/
+
+/*
+
+var obj = {
+  num : 2
+};
+
+var obj2 = {
+  num : 3
+};
+
+function test(a, b) {
+  return a*b/this.num ;
+};
+
+var arr = [1,2,3,4,5,7,8];
+
+var bound = test.bind(obj);
+
+
+console.log(test(5,5));
+
+console.log(test.call(obj,2,4));
+
+console.log(test.apply(obj2,arr));
+
+console.log(test.bind(obj)(2,4));
+console.log(bound(2,4));
+*/
+
+/*
+
+var obj = {
+    val1 : "string1" ,
+    val2 : "string2"
+}
+
+function func() {
+    var arr = this.val1.split("");
+    var arr2 = this.val2.split("");
+    var arr3 = arr.concat(arr2);
+    return arr3;
+}
+
+var bound = func.bind(obj);
+console.log(bound());
+*/
+
+
+/*
+
+        function test(a, b) {
+            var arr = Array.prototype.slice.call(arguments);
+            console.log(arr);
+            return a*b;
+        };
+
+test(1,2,34,5,6,7);
+
+*/
+/*
+
+var a = 10;
+
+    function test(c) {
+
+        function test2(b) {
+            var d = c;
+            return b + d;
+        }
+
+        return test2;
+    }
+
+    var sum = test(7);
+    console.log(sum(4));
+*/
+
+/*
+
+function counter(start) {
+    var a = start || 0;
+    function inc() {
+        a++;
+        return a;
+    }
+    return inc;
+}
+
+
+var count = counter(4);
+var count2 = counter(7);
+
+    console.log(count());
+    console.log(count());
+    console.log(count());
+
+    console.log(count2());
+    console.log(count2());
+    console.log(count2());
+
+*/
+
+
+
+</script>
+
+
+</body>
+</html>
